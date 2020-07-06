@@ -2,10 +2,13 @@ import React from 'react'
 
 import './Tile.css'
 
-const Tile = () => {
+const Tile = (props) => {
+  const { selected, matched, color } = props;
+  let bgColor = (selected || matched) ? {backgroundColor: color} : null;
 
   return (
-    <div className='Tile'>
+    <div className='Tile' style={bgColor}>
+      {selected || matched ? <svg /> : null}
     </div>
   )
 }
