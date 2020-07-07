@@ -3,7 +3,7 @@ import './Tile.css'
 
 
 const Tile = (props) => {
-  const { selected, matched, color } = props;
+  const { selected, matched, color, handleTileClicked, id } = props;
 
   const dynamicColor = (selected || matched) ? {backgroundColor: color} : null;
   const svg = <props.svg />
