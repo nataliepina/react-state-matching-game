@@ -1,16 +1,10 @@
-import React from 'react';
-import './Button.css';
-import GameContext from '../../GameContext'
+import React from 'react'
 
-const Button = (props) => ( 
-  <GameContext.Consumer>
-    {
-      ({playing, startGame}) =>
-        <button onClick={startGame}>
-          {playing ? 'reset' : 'start'}
-        </button>
-    }
-  </GameContext.Consumer>
-)
+const GameContext = React.createContext({
+  numTiles: 36,
+  playing: false,
+  handleNumTileChange: () => {},
+  startPlaying: () => {}
+})
 
-export default Button
+export default GameContext
